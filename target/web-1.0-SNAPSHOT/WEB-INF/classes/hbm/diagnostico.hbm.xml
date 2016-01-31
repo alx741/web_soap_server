@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="hbm.Diagnostico" table="diagnosticos">
+        <id name="id" column="id_diagnostico">
+            <generator class="increment"/>
+        </id>
+
+        <property name="fecha" type="date">
+            <column name="fecha"/>
+        </property>
+
+        <property name="diagnostico">
+            <column name="diagnostico"/>
+        </property>
+
+        <property name="examen">
+            <column name="examen"/>
+        </property>
+
+        <many-to-one name="medico" column="medico" unique="true"
+            class="hbm.Medico" not-null="true"/>
+
+        <many-to-one name="paciente" column="paciente" unique="true"
+            class="hbm.Paciente" not-null="true"/>
+
+    </class>
+
+</hibernate-mapping>

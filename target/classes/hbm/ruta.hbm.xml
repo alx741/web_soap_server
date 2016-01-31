@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="hbm.Ruta" table="rutas">
+        <id name="id" column="id_ruta">
+            <generator class="increment"/>
+        </id>
+
+        <property name="tarifa">
+            <column name="tarifa"/>
+        </property>
+
+        <property name="origen">
+            <column name="origen"/>
+        </property>
+
+        <property name="destino">
+            <column name="destino"/>
+        </property>
+
+        <property name="transporte">
+            <column name="transporte"/>
+        </property>
+
+        <property name="habilitado">
+            <column name="habilitado"/>
+        </property>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<ui:composition template="index.xhtml"
+               
+                xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="Deshabilitar">
+        <h:panelGrid columns="3" cellpadding="100">
+    <p:panel header="Deshabilitar ruta">
+    <h:form>
+
+        <table>
+            <tr>
+                <td><p:outputLabel for="ruta" value="Tipo de ruta: " /></td>
+        
+                <td><p:selectOneMenu id="ruta" value="#{rutaMBean.ruta}" style="width:550px">
+            <f:selectItems value="#{rutaMBean.rutasHabilitados}" />
+                    </p:selectOneMenu></td>
+            </tr>
+        </table>
+
+    
+    <hr/>
+    <br/>
+        <p:commandButton id="submit" value="Deshabilitar" action="#{rutaMBean.deshabilitar}" ajax="false"/>
+
+     </h:form>
+     </p:panel>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

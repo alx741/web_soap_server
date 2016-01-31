@@ -1,0 +1,41 @@
+<ui:composition template="index.xhtml"
+               
+                xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="Nuevo">
+  <h:panelGrid columns="3" cellpadding="100">
+                <p:panel header="Nuevo Ruta">      
+    
+    <h:form>
+         <table>
+             <tr>
+                <td><h:outputLabel for="tarifa" value="Tarifa:" /></td>
+                <td><p:inputText id="tarifa" value="#{rutaMBean.tarifa}"/></td>
+             </tr>
+             <tr>
+                <td><h:outputLabel for="origen" value="Origen:" /></td>
+                <td><p:inputText id="origen" value="#{rutaMBean.origen}"/></td>
+             </tr>
+             <tr>
+                <td><h:outputLabel for="destino" value="Destino:" /></td>
+                <td><p:inputText id="destino" value="#{rutaMBean.destino}"/></td>
+             </tr>
+             <tr>
+                <td><h:outputLabel for="transporte" value="Transporte:" /></td>
+                <td><p:inputText id="transporte" value="#{rutaMBean.transporte}"/></td>
+             </tr>
+
+
+             <tr>
+                <td><p:commandButton id="submit" value="Guardar" action="#{rutaMBean.save}" ajax="false"/></td>
+                <td><p:commandButton id="reset" value="Resetear" action="#{rutaMBean.reset}" ajax="false"/></td>
+             </tr>
+         </table>
+     </h:form>
+     </p:panel>
+  </h:panelGrid>
+    </ui:define>
+</ui:composition>

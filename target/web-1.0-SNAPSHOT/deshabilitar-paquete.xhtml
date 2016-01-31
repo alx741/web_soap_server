@@ -1,0 +1,30 @@
+<ui:composition template="index.xhtml"
+               
+                xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="Deshabilitar">
+        <h:panelGrid columns="3" cellpadding="100">
+    <p:panel header="Deshabilitar paquete">
+    <h:form>
+
+        <table>
+            <tr><p:outputLabel for="paquete" value="Tipo de paquete: " />
+        
+                <td><p:selectOneMenu id="paquete" value="#{paqueteMBean.paquete}" style="width:500px">
+            <f:selectItems value="#{paqueteMBean.paquetesHabilitados}" />
+                    </p:selectOneMenu></td>
+            </tr>
+        </table>
+    
+    <hr/>
+    
+        <p:commandButton id="submit" value="Deshabilitar" action="#{paqueteMBean.deshabilitar}" ajax="false"/>
+        
+     </h:form>
+     </p:panel>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>

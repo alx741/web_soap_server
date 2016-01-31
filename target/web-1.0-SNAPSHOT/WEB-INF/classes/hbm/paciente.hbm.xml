@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="hbm.Paciente" table="pacientes">
+        <id name="id" column="id_paciente">
+            <generator class="increment"/>
+        </id>
+
+        <property name="cedula">
+            <column name="cedula"/>
+        </property>
+
+        <property name="nombre">
+            <column name="nombre"/>
+        </property>
+
+        <property name="apellido">
+            <column name="apellido"/>
+        </property>
+
+        <property name="edad">
+            <column name="edad"/>
+        </property>
+
+
+        <property name="direccion">
+            <column name="direccion"/>
+        </property>
+
+
+        <property name="email">
+            <column name="email"/>
+        </property>
+
+
+        <property name="procedencia">
+            <column name="procedencia"/>
+        </property>
+
+
+    </class>
+
+</hibernate-mapping>

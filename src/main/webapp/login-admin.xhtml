@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:p="http://primefaces.org/ui">
+
+    
+    <h:head>
+        <title>Ingreso Administrador</title>
+         <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+    </h:head>
+ 
+    <h:body >
+         
+    <h:form >
+        <div id="content" class="right_content">
+            <p:layout style="min-width:400px;min-height:395px;">
+           <p:layoutUnit position="center" size="100" resizable="true">                
+        <p:panel id="basic" header="Ingreso al Sistema Administrador" style="margin-bottom:10px">
+        <h:panelGrid columns="2" cellpadding="5">
+        <br />
+        
+            <p:graphicImage name="./mensajeria_express.png" />
+            <h:outputText value="Nombre de Usuario: "/> <p:inputText id="nombreUsuario"/>
+            <h:outputText value="Password: " />
+            <p:password id="pass" value="#{adminMBean.adminPass}"/>
+            </h:panelGrid>
+            
+             <p:commandButton value="Ingresar" icon="ui-icon-star" action="#{adminMBean.checkAdminPassword}" ajax="false"/>
+                    
+           
+    </p:panel>
+                </p:layoutUnit>
+            </p:layout>
+        </div>
+    
+    </h:form>
+        
+    </h:body>
+ 
+</html>

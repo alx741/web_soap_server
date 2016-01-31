@@ -1,0 +1,91 @@
+<ui:composition template="index.xhtml"
+
+    xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="Listar">
+
+                    <h:form>
+        <p:tab title="Solicitudes">
+
+
+        <p:dataTable id="solicitud" var="solicitud"
+            value="#{solicitudMBean.solicitudes}" widgetVar="paquetesTable"
+            emptyMessage="Solicitudes no encontradas con ese criterio"
+            filteredValue="#{solicitudMBean.filteredSolicitudes}" rows="20"
+            paginator="true" paginatorTemplate="{CurrentPageReport}
+            {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink}
+            {LastPageLink} {RowsPerPageDropdown}"
+            rowsPerPageTemplate="5,10,20,50" resizableColumns="false"
+            liveResize="true" selectionMode="single"
+            selection="#{solicitudMBean.solicitudO}" rowKey="#{solicitud.id}"
+            style="width: 100%">
+
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Id" />
+                </f:facet>
+                     <h:outputText value="#{solicitud.id}" />
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Cedula" />
+                </f:facet>
+                <h:outputText value="#{solicitud.cedula}" />
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Paquete" />
+                </f:facet>
+                <h:outputText value="#{solicitud.paquete}" />
+            </p:column>
+          <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Fecha" />
+                </f:facet>
+              <h:outputText value="#{solicitud.fecha}" />
+            </p:column>
+                <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Aprobado" />
+                </f:facet>
+                    <h:outputText value="#{solicitud.aprobado}" />
+            </p:column>
+
+        </p:dataTable>
+
+
+    <br/>
+    <hr/>
+    <br/>
+        <p:outputLabel for="comentario" value="Comentario: " />
+        <br/>
+        <p:inputText id="comentario" value="#{solicitudMBean.comentario}"/>
+
+
+
+    <br/>
+    <hr/>
+    <br/>
+        <p:outputLabel for="aprobado" value="Aprobación: " />
+        <p:selectOneRadio id="aprobado" value="#{solicitudMBean.aprobadoS}">
+            <br/>
+            <f:selectItem itemLabel="Aprobado" itemValue="aprobado"/>
+            <br/>
+            <f:selectItem itemLabel="Desaprobado" itemValue="desaprobado"/>
+        </p:selectOneRadio>
+
+
+    <br/>
+    <hr/>
+    <br/>
+        <p:commandButton id="submit" value="Agregar Comentario" action="#{solicitudMBean.save()}" ajax="false"/>
+
+
+        </p:tab>
+        </h:form>
+
+    </ui:define>
+</ui:composition>

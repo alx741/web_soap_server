@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+    http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+
+        <managed-bean>
+        <managed-bean-name>empleadoMBean</managed-bean-name>
+        <managed-bean-class>DOM.EmpleadoManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>clienteMBean</managed-bean-name>
+        <managed-bean-class>DOM.ClienteManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>rutaMBean</managed-bean-name>
+        <managed-bean-class>DOM.RutaManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>paqueteMBean</managed-bean-name>
+        <managed-bean-class>DOM.PaqueteManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>facturaMBean</managed-bean-name>
+        <managed-bean-class>DOM.FacturaManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>eventoMBean</managed-bean-name>
+        <managed-bean-class>DOM.EventoManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>guiaMBean</managed-bean-name>
+        <managed-bean-class>DOM.GuiaManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>adminMBean</managed-bean-name>
+        <managed-bean-class>DOM.AdminManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>solicitudMBean</managed-bean-name>
+        <managed-bean-class>DOM.SolicitudManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>diagnosticoMBean</managed-bean-name>
+        <managed-bean-class>DOM.DiagnosticoManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>pacienteMBean</managed-bean-name>
+        <managed-bean-class>DOM.PacienteManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <managed-bean>
+        <managed-bean-name>medicoMBean</managed-bean-name>
+        <managed-bean-class>DOM.MedicoManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        </managed-bean>
+
+        <navigation-rule>
+        <from-view-id>/login-admin.xhtml</from-view-id>
+            <navigation-case>
+                <from-action>#{adminMBean.checkAdminPassword}</from-action>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-action>#{adminMBean.checkAdminPassword}</from-action>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/login-admin.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+        <navigation-rule>
+        <from-view-id>/login-empleado.xhtml</from-view-id>
+            <navigation-case>
+                <from-action>#{empleadoMBean.checkEmpleadoPassword}</from-action>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-action>#{empleadoMBean.checkEmpleadoPassword}</from-action>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/logi-empleado.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/agregar-empleado.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/agregar-cliente.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/agregar-ruta.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/agregar-paquete.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/agregar-factura.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/agregar-evento.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/agregar-guia.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/habilitar-paquete.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/indexAd.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/deshabilitar-paquete.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/indexAd.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/modificar-paquete.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/habilitar-ruta.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/deshabilitar-ruta.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/modificar-ruta.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/pagar-factura.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/modificar-empleado.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/modificar-cliente.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+        <navigation-rule>
+        <from-view-id>/agregar-diagnostico.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>success</from-outcome>
+                <to-view-id>/index.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>error</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+</faces-config>

@@ -1,0 +1,96 @@
+<ui:composition template="index.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:define name="Nuevo">
+
+<h:panelGrid columns="1" cellpadding="20">
+
+    <p:panel header="Examenes">
+        <h:form id="main">
+
+
+        <br/>
+            <p:outputLabel for="medico" value="Médico:" />
+        <br/>
+        <p:dataTable id="medico" var="medico"
+            value="#{medicoMBean.medicos}" widgetVar="medicosTable"
+            emptyMessage="Medicos no encontrados con ese criterio"
+            filteredValue="#{medicoMBean.filteredMedicos}" rows="5"
+            paginator="true" paginatorTemplate="{CurrentPageReport}
+            {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink}
+            {LastPageLink} {RowsPerPageDropdown}"
+            rowsPerPageTemplate="5,10,20,50" resizableColumns="false"
+            liveResize="true" selectionMode="single"
+            selection="#{examenMBean.medicoO}" rowKey="#{medico.id}">
+            <p:ajax event="rowSelect"
+                listener="#{examenMBean.onMedicoChange}"
+                update=":main:examenes :main:valor"/>
+                <f:facet name="header">
+                    <p:outputPanel>
+                        <p:inputText id="globalFilter"
+                            onkeyup="PF('medicosTable').filter()"
+                            style="width:150px" placeholder="Buscar"/>
+                    </p:outputPanel>
+                </f:facet>
+                <p:column filterBy="#{medico.id}" headerText="ID"  filterMatchMode="contains">
+                        <h:outputText value="#{medico.id}" />
+                </p:column>
+                <p:column filterBy="#{medico.cedula}" headerText="Cedula"  filterMatchMode="contains">
+                    <h:outputText value="#{medico.cedula}" />
+                </p:column>
+                <p:column filterBy="#{medico.nombre}" headerText="Nombre"  filterMatchMode="contains">
+                    <h:outputText value="#{medico.nombre}" />
+                </p:column>
+                <p:column filterBy="#{medico.apellido}" headerText="Apellido"  filterMatchMode="contains">
+                    <h:outputText value="#{medico.apellido}" />
+                </p:column>
+            </p:dataTable>
+        <br/>
+
+
+        <br/>
+        <hr/>
+        <br/>
+        <h3>Diagnosticos emitidos por el médico</h3>
+
+        <br/>
+        <h:outputText value="Total a pagar al medíco: $" />
+        <b>
+            <h:outputText id="valor" value="#{examenMBean.valorMedico}" />
+        </b>
+
+        <br/>
+        <br/>
+        <p:dataTable id="examenes" value="#{examenMBean.examenesMedico}" var="examen" style="width: 100%">
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Fecha" />
+                </f:facet>
+                <h:outputText value="#{examen.fecha}" />
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Examen" />
+                </f:facet>
+                <h:outputText value="#{examen.examen}" />
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Diagnóstico" />
+                </f:facet>
+                <h:outputText value="#{examen.diagnostico}" />
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Valor" />
+                </f:facet>
+                <h:outputText value="$15" />
+            </p:column>
+        </p:dataTable>
+
+
+     </h:form>
+     </p:panel>
+</h:panelGrid>
+</ui:define>
+</ui:composition>

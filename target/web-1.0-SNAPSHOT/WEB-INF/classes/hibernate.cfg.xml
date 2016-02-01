@@ -25,6 +25,6 @@
 
   <mapping resource="hbm/medico.hbm.xml"/>
   <mapping resource="hbm/paciente.hbm.xml"/>
-  <mapping resource="hbm/diagnostico.hbm.xml"/>
+  <mapping resource="hbm/examen.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>

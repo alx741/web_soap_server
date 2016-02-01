@@ -4,21 +4,18 @@
     xmlns:p="http://primefaces.org/ui"
     xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-        <title>Hospital</title>
+        <title>Hospital Médicos</title>
         <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-        <style>
-            body{
-                backgroud-color: lightblue;
-            }
-        </style>
     </h:head>
 
 <h:body>
     <p:layout fullPage="true">
 
             <p:layoutUnit position="north" resizable="false" closable="true" collapsible="true">
-                <h2>Hospital XYZ [Portal de Medicos]</h2>
+                <a href="index.faces"><img src="resources/snake.png"
+                    height="70px" width="80px" style="float: left"/>
+                    <h3>Hospital XYZ [Portal de Médicos]</h3></a>
             </p:layoutUnit>
 
 
@@ -26,8 +23,9 @@
         <p:layoutUnit resizable="false" position="west" size="180" header="Menu">
             <p:panelMenu style="width:170px">
 
-                    <p:submenu label="Diagnosticos" >
-                        <p:menuitem value="Crear" url="agregar-diagnostico.faces" icon="ui-icon-pencil" />
+                    <p:submenu label="Examenes" >
+                        <p:menuitem value="Nuevo" url="agregar-examen.faces" icon="ui-icon-pencil" />
+                        <p:menuitem value="Listar" url="listar-examen.faces" icon="ui-icon-script" />
                     </p:submenu>
             </p:panelMenu>
         </p:layoutUnit>
@@ -42,8 +40,8 @@
                 <ui:insert name="Deshabilitar"/>
                 <ui:insert name="Habilitar"/>
                 <ui:insert name="Pagar"/>
-                    <ui:insert name="Agregar"/>
-                    <ui:insert name="NuevoGuia"/>
+                <ui:insert name="Agregar"/>
+                <ui:insert name="NuevoGuia"/>
 
             </p:layoutUnit>
 

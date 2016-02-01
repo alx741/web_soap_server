@@ -21,9 +21,9 @@ CREATE OR REPLACE TABLE `pacientes`
     `procedencia` varchar(50) NOT NULL
 ) ENGINE = InnoDB;
 
-CREATE OR REPLACE TABLE `diagnosticos`
+CREATE OR REPLACE TABLE `examenes`
 (
-    `id_diagnostico` integer,
+    `id_examen` integer,
     `fecha`          date NOT NULL,
     `diagnostico`    varchar(50) NOT NULL,
     `examen`         varchar(50) NOT NULL,

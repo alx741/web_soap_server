@@ -61,8 +61,8 @@
         </managed-bean>
 
         <managed-bean>
-        <managed-bean-name>diagnosticoMBean</managed-bean-name>
-        <managed-bean-class>DOM.DiagnosticoManagedBean</managed-bean-class>
+        <managed-bean-name>examenMBean</managed-bean-name>
+        <managed-bean-class>DOM.ExamenManagedBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
         </managed-bean>
 
@@ -298,7 +298,7 @@
         </navigation-rule>
 
         <navigation-rule>
-        <from-view-id>/agregar-diagnostico.xhtml</from-view-id>
+        <from-view-id>/agregar-examen.xhtml</from-view-id>
             <navigation-case>
                 <from-outcome>success</from-outcome>
                 <to-view-id>/index.xhtml</to-view-id>

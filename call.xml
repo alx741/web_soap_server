@@ -1,0 +1,9 @@
+<!-- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.jaxwsExample/"> -->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:sayHello>
+         <arg0>DANIEL</arg0>
+      </ws:sayHello>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -29,4 +29,21 @@
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>*.xhtml</url-pattern>
   </servlet-mapping>
+
+
+  <listener>
+    <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>helloWs</servlet-name>
+    <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>helloWs</servlet-name>
+    <url-pattern>/HelloWs</url-pattern>
+  </servlet-mapping>
+  <!-- <session-config> -->
+  <!--   <session-timeout>120</session-timeout> -->
+  <!-- </session-config> -->
 </web-app>
